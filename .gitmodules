@@ -1,9 +1,9 @@
-[submodule "requests"]
-	path = requests
-	url = https://github.com/george2/requests.git
 [submodule "ntlm"]
 	path = ntlm
 	url = https://github.com/george2/python-ntlm.git
 [submodule "requests_ntlm"]
 	path = requests_ntlm
 	url = https://github.com/requests/requests-ntlm.git
+[submodule "requests"]
+	path = requests
+	url = https://github.com/george2/requests.git
