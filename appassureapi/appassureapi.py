@@ -41,5 +41,5 @@ class AppAssureAPI(object):
             # assume data is a str
             xml = '<%s>%s</%s>' % (objname, data, objname)
 
-        return ('<?xml version="1.0" encoding="utf-16"?>' +
-                    xml).encode('utf-16')
+        return ('<?xml version="1.0" encoding="utf-8"?>' +
+                    xml).encode('utf-8')
