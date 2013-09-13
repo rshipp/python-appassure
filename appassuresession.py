@@ -1,8 +1,8 @@
 """Python wrapper for the AppAssure 5 REST API.
 
-    AppAssureSession
-    Handles logging in to and sending and retrieving data from an
-    AppAssure core server. Returns requested data as a Python object.
+   AppAssureSession
+   Handles logging in to and sending and retrieving data from an
+   AppAssure core server. Returns requested data as a Python object.
 """
 
 from xml2obj import xml2obj
