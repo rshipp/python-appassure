@@ -32,11 +32,6 @@ class Struct(dict):
         del self[name]
 
 
-def _xml2Obj(xml):
-    """Return a structured object when given raw XML data."""
-    obj = xml
-    return obj
-
 class AppAssureSession(object):
     """Allows us to request data from the API as a logged-in user."""
     
