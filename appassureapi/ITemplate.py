@@ -11,7 +11,7 @@ from appassureapi import AppAssureAPI
 class ITemplate(AppAssureAPI):
     
     def GetExampleData(self):
-        return self.session.request('/templateuri')
+        return self.session.request('templateuri')
 
     def DoSomethingOnTheServer(self):
         data = {
@@ -29,5 +29,5 @@ class ITemplate(AppAssureAPI):
         # <TemplateTag><wrapmeinTamplateTag>please</wrapmeinTemplateTag>
         # <mykey><insidekey>yay!</insidekey><doublekey><moreKeys>value!!!
         # </moreKeys></doublekey></mykey></TemplateTag>
-        return self.session.request('/dosomethinguri', 'POST',
+        return self.session.request('dosomethinguri', 'POST',
                 self.getXML(data, 'TemplateTag'))
