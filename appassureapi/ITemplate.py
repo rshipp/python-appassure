@@ -34,8 +34,9 @@ class ITemplate(AppAssureAPI):
 
         # Send the following xml data to the server:
         # <?xml version="1.0" encoding="utf-8"?>
-        # <TemplateTag><wrapmeinTamplateTag>please</wrapmeinTemplateTag>
-        # <mykey><insidekey>yay!</insidekey><doublekey><moreKeys>value!!!
-        # </moreKeys></doublekey></mykey></TemplateTag>
+        # <TemplateTag xmlns="blah"><wrapmeinTamplateTag>please
+        # </wrapmeinTemplateTag><mykey><insidekey>yay!</insidekey>
+        # <doublekey><moreKeys>value!!!</moreKeys></doublekey>
+        # </mykey></TemplateTag>
         return self.session.request('dosomethinguri', 'POST',
-                self.getXML(data, 'TemplateTag'))
+                self.getXML(data, 'TemplateTag xmlns="blah"'))

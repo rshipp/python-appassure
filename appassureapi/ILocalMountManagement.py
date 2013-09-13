@@ -1,16 +1,54 @@
 """AppAssure 5 Core API
-   ILocalMountManagemeht
+   ILocalMountManagement
 """
 
 from appassureapi import AppAssureAPI
 
 class ILocalMountManagement(AppAssureAPI):
     
-    def StartMount(self):
+    def StartMount(self, data):
         """Summary: Starts mounting a specified recovery point.
            URI: mounts/
            HTTP Method: POST
+
+           data must be a correctly formatted dictionary containing the
+           information described at
+           http://docs.appassure.com/display/AA50D/ILocalMountManagement#ILocalMountManagement-StartMount
+           
+           The following is an example request dict object:
+
+                {
+                    'agentIds': {
+                        'agentId':
+                            '1627aea5-8e0a-4371-9022-9b504344e724',
+                        'agentId':
+                            '1627aea5-8e0a-4371-9022-9b504344e724',
+                    },
+                    'isNightlyJob': 'true',
+                    'jobId': '1627aea5-8e0a-4371-9022-9b504344e724',
+                    'mountPoint': 'String content',
+                    'recoveryPoint': 'String content',
+                    'shareAllowedGroup': 'String content',
+                    'shareName': 'String content',
+                    'type': 'None',
+                    'volumeImagesToMount': {
+                        'string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"':
+                            'String content',
+                        'string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"':
+                            'String content',
+                    },
+                }
+
+           Note that the validity of the dict will not be checked by
+           this function. If it is invalid, AppAssureSession or
+           AppAssureAPI may raise some exception (which you should
+           catch and deal with), or everything might continue happily,
+           and this function will return invalid data.
         """
+        return self.session.request('mounts', 'POST', self.getXML(data,
+                    'mountRequest xmlns="http://apprecovery.com/management/api/2010/05"'))
+
+
 
     def GetMounts(self):
         """Summary: Gets the list of currently mounted volumes.
