@@ -1,11 +1,13 @@
 """Python wrapper for the AppAssure 5 REST API."""
 
-import xml2obj
+from xml2obj import xml2obj
 import requests
 from requests_ntlm import HttpNtlmAuth
 
 # AppAssure 5 API Core URL
 API_URL = "apprecovery/api/core/"
+# Login URL (any page that returns a 200 OK response when logged in)
+LOGIN_URL = "apprecovery/admin/Core"
 
 
 # Exception classes used by AppAssureSession.
@@ -32,12 +34,10 @@ class AppAssureSession(object):
            your AppAssure server will need to verify with a certain
            domain.
         """
-        self.host = host
-        self.port = port
         self.username = username
         self.baseurl = "https://%s:%s/" % (host, port)
         self.apiurl = self.baseurl + API_URL
-        self.loginurl = self.baseurl + 'apprecovery/admin/Core'
+        self.loginurl = self.baseurl + LOGIN_URL
         self.http = requests.Session()
         self.auth = HttpNtlmAuth('%s\\%s' % (domain, self.username),
                 password)
@@ -78,7 +78,7 @@ class AppAssureSession(object):
             raise UnsupportedMethodError("Unsupported HTTP method", method)
 
         if response.ok:
-            return xml2obj.xml2obj(response.text)
+            return xml2obj(response.text)
         else:
             raise InvalidURIError("The server returned an error message.",
                    response, self.apiurl + uri)
