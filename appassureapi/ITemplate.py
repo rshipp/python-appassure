@@ -11,9 +11,17 @@ from appassureapi import AppAssureAPI
 class ITemplate(AppAssureAPI):
     
     def GetExampleData(self):
+        """Summary: Gets example data.
+           URI: templateuri/
+           HTTP Method: GET
+        """
         return self.session.request('templateuri')
 
     def DoSomethingOnTheServer(self):
+        """Summary: Does something on the server.
+           URI: dosomethinguri/
+           HTTP Method: POST
+        """
         data = {
             'mykey': {
                 'insidekey': 'yay!',
@@ -25,7 +33,7 @@ class ITemplate(AppAssureAPI):
         }
 
         # Send the following xml data to the server:
-        # <?xml version="1.0" encoding="utf-16"?>
+        # <?xml version="1.0" encoding="utf-8"?>
         # <TemplateTag><wrapmeinTamplateTag>please</wrapmeinTemplateTag>
         # <mykey><insidekey>yay!</insidekey><doublekey><moreKeys>value!!!
         # </moreKeys></doublekey></mykey></TemplateTag>
