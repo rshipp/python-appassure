@@ -60,10 +60,12 @@ class AppAssureSession(object):
     def request(self, uri, method='GET', data=None):
         """Sends a request to the AppAssure Core server, with the
            specified uri. Returns a structured object containing the
-           data from the server's response. Method must be one of: GET,
-           PUT, or POST. The optional 'data' parameter is only used if
-           the HTTP method supports sending data to the server. (Eg,
-           POST.)
+           data from the server's response. The optional 'data'
+           parameter is only used if the HTTP method supports sending
+           data to the server. (Eg, POST.)
+
+           method must be one of:
+                GET, POST, PUT, DELETE
         """
         if method == 'GET':
             response = self.http.get("%s%s" % (self.apiurl, uri),
@@ -73,6 +75,9 @@ class AppAssureSession(object):
                     auth=self.auth)
         elif method == 'PUT':
             response = self.http.put("%s%s" % (self.apiurl, uri), data,
+                    auth=self.auth)
+        elif method == 'DELETE':
+            response = self.http.delete("%s%s" % (self.apiurl, uri),
                     auth=self.auth)
         else:
             raise UnsupportedMethodError("Unsupported HTTP method", method)
