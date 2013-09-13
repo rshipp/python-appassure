@@ -8,6 +8,7 @@ from requests_ntlm import HttpNtlmAuth
 API_URL = "apprecovery/api/core/"
 
 
+# Exception classes used by AppAssureSession.
 class LoginError(Exception):
     """Connecting and/or logging in to the AppAssure server failed."""
 
@@ -20,22 +21,17 @@ class InvalidURIError(Exception):
     """An invalid URI was specified."""
 
 
-class Struct(dict):
-    """Allows easy access to the parsed XML."""
-    def __getattr__(self, name):
-        return self[name]
-
-    def __setattr__(self, name, value):
-        self[name] = value
-
-    def __delattr__(self, name):
-        del self[name]
-
-
 class AppAssureSession(object):
     """Allows us to request data from the API as a logged-in user."""
     
     def __init__(self, host, port, username, password, domain='DOMAIN'):
+        """The default domain of 'DOMAIN' is used because the AppAssure
+           server does not seem to use this value at all. The optional
+           argument is only provided in case your situation is
+           different. (For example, if you use Active Directory, perhaps
+           your AppAssure server will need to verify with a certain
+           domain.
+        """
         self.host = host
         self.port = port
         self.username = username
