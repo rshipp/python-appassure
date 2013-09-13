@@ -3,7 +3,7 @@
    the AppAssure Core API interfaces listed here:
        http://docs.appassure.com/display/AA50D/Core+API+Reference
 
-   Note that you should not never to override the __init__ function.
+   Note that you should never need to override the __init__ function.
 """
 
 from appassureapi import AppAssureAPI
