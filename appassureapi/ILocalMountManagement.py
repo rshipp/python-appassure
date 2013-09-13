@@ -48,8 +48,6 @@ class ILocalMountManagement(AppAssureAPI):
         return self.session.request('mounts', 'POST', self.getXML(data,
                     'mountRequest xmlns="http://apprecovery.com/management/api/2010/05"'))
 
-
-
     def GetMounts(self):
         """Summary: Gets the list of currently mounted volumes.
            URI: mounts/
