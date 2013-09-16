@@ -60,6 +60,7 @@ class AppAssureAPI(object):
 
            data should be a dict, and objname should be a string.
         """
-        xml = self._getXML(data, objname)
+        xml = self._getXML(data, '%s xmlns="http://apprecovery.com/management/api/2010/05"' %
+                objname)
         return ('<?xml version="1.0" encoding="utf-8"?>' +
                     xml).encode('utf-8')

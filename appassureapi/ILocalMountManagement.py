@@ -46,7 +46,7 @@ class ILocalMountManagement(AppAssureAPI):
            and this function will return invalid data.
         """
         return self.session.request('mounts', 'POST', self.getXML(data,
-                    'mountRequest xmlns="http://apprecovery.com/management/api/2010/05"'))
+                    'mountRequest'))
 
     def GetMounts(self):
         """Summary: Gets the list of currently mounted volumes.

@@ -39,4 +39,4 @@ class ITemplate(AppAssureAPI):
         # <doublekey><moreKeys>value!!!</moreKeys></doublekey>
         # </mykey></TemplateTag>
         return self.session.request('dosomethinguri', 'POST',
-                self.getXML(data, 'TemplateTag xmlns="blah"'))
+                self.getXML(data, 'TemplateTag'))

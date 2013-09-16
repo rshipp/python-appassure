@@ -83,7 +83,7 @@ class AppAssureSession(object):
                     auth=self.auth)
         elif method == 'DELETE':
             response = self.http.delete("%s%s" % (self.apiurl, uri),
-                    auth=self.auth)
+                    data, auth=self.auth)
         else:
             raise UnsupportedMethodError("Unsupported HTTP method", method)
 
