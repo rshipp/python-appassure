@@ -2,7 +2,7 @@ python-appassure
 ================
 
 A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [Core
-API](http://docs.appassure.com/display/AA50D/).
+API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
 
 ## Installation
 
