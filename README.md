@@ -30,7 +30,7 @@ script that will pull from the AppAssure documentation and automate most
 of the implementation process. You will, however, still need to enter
 the wrapper XML tag for the XML request body, if that exists. 
 
-[xml tag](http://i.imgur.com/HNsxslV.png)
+![xml tag](http://i.imgur.com/HNsxslV.png)
 
 If there is no XML request body for a method, just press enter. You will
 not be prompted for request bodies for methods that use the `GET` HTTP
