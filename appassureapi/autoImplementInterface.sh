@@ -5,6 +5,11 @@
 URL="http://docs.appassure.com/display/AA50D/"
 newline=$'\n'
 
+[[ -x $(which html2text 2>/dev/null) ]] || (
+        echo "You must have html2text installed."
+        exit 1
+        ) || exit 1
+
 echo -n "Interface name: "
 read interface
 
