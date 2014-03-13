@@ -12,7 +12,6 @@ API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
 
 ## Usage
 
-    from appassure.appassureapi import AppAssureAPI
     from appassure.core.ITemplate import ITemplate
     from appassure.session import AppAssureSession
     s = AppAssureSession('myappassure5coreserver', 8006, 'Username',
