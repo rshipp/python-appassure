@@ -1,27 +1,21 @@
 """This is a dummy template file that shows how an actual AppAssureAPI
-   subclass should be implemented. Each subclass should contain one of
-   the AppAssure Core API interfaces listed here:
-       http://docs.appassure.com/display/AA50D/Core+API+Reference
+subclass should be implemented. Each subclass should contain one of
+the AppAssure Core API interfaces listed here:
+http://docs.appassure.com/display/AA50D/Core+API+Reference
 
-   Note that you should never need to override the __init__ function.
+Note that you should never need to override the __init__ function.
 """
 
-from appassureapi import AppAssureAPI
+from appassure.appassureapi import AppAssureAPI
 
 class ITemplate(AppAssureAPI):
     
-    def GetExampleData(self):
-        """Summary: Gets example data.
-           URI: templateuri/
-           HTTP Method: GET
-        """
+    def getExampleData(self):
+        """Gets example data."""
         return self.session.request('templateuri')
 
-    def DoSomethingOnTheServer(self):
-        """Summary: Does something on the server.
-           URI: dosomethinguri/
-           HTTP Method: POST
-        """
+    def doSomethingOnTheServer(self):
+        """Does something on the server."""
         data = {
             'mykey': {
                 'insidekey': 'yay!',

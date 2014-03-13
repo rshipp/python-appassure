@@ -1,11 +1,10 @@
 """Python wrapper for the AppAssure 5 REST API.
 
-   AppAssureSession
-   Handles logging in to and sending and retrieving data from an
-   AppAssure core server. Returns requested data as a Python object.
+Handles logging in to and sending and retrieving data from an
+AppAssure core server. Returns requested data as a Python object.
 """
 
-from xml2obj import xml2obj
+from appassure.xml2obj import xml2obj
 import requests
 from requests_ntlm import HttpNtlmAuth
 
@@ -33,11 +32,11 @@ class AppAssureSession(object):
     
     def __init__(self, host, port, username, password, domain='DOMAIN'):
         """The default domain of 'DOMAIN' is used because the AppAssure
-           server does not seem to use this value at all. The optional
-           argument is only provided in case your situation is
-           different. (For example, if you use Active Directory, perhaps
-           your AppAssure server will need to verify with a certain
-           domain.
+        server does not seem to use this value at all. The optional
+        argument is only provided in case your situation is
+        different. (For example, if you use Active Directory, perhaps
+        your AppAssure server will need to verify with a certain
+        domain.
         """
         self.username = username
         self.baseurl = "https://%s:%s/" % (host, port)
@@ -64,13 +63,13 @@ class AppAssureSession(object):
 
     def request(self, uri, method='GET', data=None):
         """Sends a request to the AppAssure Core server, with the
-           specified uri. Returns a structured object containing the
-           data from the server's response. The optional 'data'
-           parameter is only used if the HTTP method supports sending
-           data to the server. (Eg, POST.)
+        specified uri. Returns a structured object containing the
+        data from the server's response. The optional 'data'
+        parameter is only used if the HTTP method supports sending
+        data to the server. (Eg, POST.)
 
-           method must be one of:
-                GET, POST, PUT, DELETE
+        method must be one of:
+            GET, POST, PUT, DELETE
         """
         if method == 'GET':
             response = self.http.get("%s%s" % (self.apiurl, uri),
@@ -92,5 +91,3 @@ class AppAssureSession(object):
         else:
             raise InvalidURIError("The server returned an error message.",
                    response, self.apiurl + uri)
-
-

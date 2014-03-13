@@ -1,8 +1,7 @@
 """Python wrapper for the AppAssure 5 REST API.
 
-   AppAssureAPI
-   Provides an abstraction layer for using the AppAssure core API. Sends
-   well-formed XML requests through a given AppAssureSession object.
+Provides an abstraction layer for using the AppAssure core API. Sends
+well-formed XML requests through a given AppAssureSession object.
 """
 
 class AppAssureAPI(object):
@@ -10,7 +9,7 @@ class AppAssureAPI(object):
     
     def __init__(self, session):
         """You MUST provide a valid AppAssureSession object as a
-           parameter when creating a new AppAssureAPI object.
+        parameter when creating a new AppAssureAPI object.
         """
         self.session = session
 
@@ -19,14 +18,14 @@ class AppAssureAPI(object):
 
     def __exit__(self, type, value, tb):
         """We don't want to close the AppAssureSession object, so there
-           is nothing to do here.
+        is nothing to do here.
         """
         pass
 
     def _getXMLEndTag(self, starttag):
         """Deal with things like
-            <string xmlns="http://apprecovery.com/management/api/2010/05">
-            </string>
+        <string xmlns="http://apprecovery.com/management/api/2010/05">
+        </string>
         """
         if ' ' in starttag:
             endtag = starttag.split(' ')[0]
@@ -36,12 +35,12 @@ class AppAssureAPI(object):
 
     def _getXML(self, data, objname=None):
         """Convert a Python object into XML in the format expected by
-           the AppAssure Core server.
+        the AppAssure Core server.
 
-           Original source:
-           http://code.activestate.com/recipes/440595-extensible-object-to-xml-convertor/
+        Original source:
+        http://code.activestate.com/recipes/440595-extensible-object-to-xml-convertor/
 
-           This is an internal function, do not use it.
+        This is an internal function, do not use it.
         """
         if type(data) == type({'':''}):
             # if data is a dict
@@ -56,9 +55,9 @@ class AppAssureAPI(object):
 
     def getXML(self, data, objname=None):
         """Convert a Python object into XML in the format expected by
-           the AppAssure Core server.
+        the AppAssure Core server.
 
-           data should be a dict, and objname should be a string.
+        data should be a dict, and objname should be a string.
         """
         xml = self._getXML(data, '%s xmlns="http://apprecovery.com/management/api/2010/05"' %
                 objname)
