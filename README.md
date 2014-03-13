@@ -7,7 +7,7 @@ API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
 ## Installation
 
     git clone https://github.com/george2/python-appassure.git
-    git submodule --init --recursive
+    pip install -r requirements.txt
     # TODO: Create setup.py for installation
 
 ## Usage
