@@ -68,6 +68,8 @@ for section in ${data}; do
         summaryTemp="${summaryTemp}        ${line}${newline}"
     done
     summary="$(sed 's/          *Summary: //' <<< "${summaryTemp}")"
+    if ! [[ ${summary: -1} == . ]]; then
+        summary="${summary}."
     IFS='*'
 
     # Translate our URI into the format expected by Python.
@@ -121,11 +123,11 @@ for section in ${data}; do
 EOF
     if [[ $(wc -c <<< ${summary}) -lt 61 ]]; then 
         cat << EOF >> ${interface}.py
-        """${summary}."""
+        """${summary}"""
 EOF
     else
         cat << EOF >> ${interface}.py
-        """${summary}.
+        """${summary}
         """
 EOF
     fi
