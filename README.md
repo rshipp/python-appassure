@@ -32,8 +32,8 @@ the wrapper XML tag for the XML request body, if that exists.
 ![xml tag](http://i.imgur.com/HNsxslV.png)
 
 If there is no XML request body for a method, just press enter. You will
-not be prompted for request bodies for methods that use the `GET` HTTP
-verb.
+not be prompted for request bodies for methods that use the `GET` or
+`DELETE` HTTP verbs.
 
 If you wish to implement an interface manually, that is also possible.
 Just take a look at some of the existing interfaces to get an idea of
