@@ -1,4 +1,5 @@
-"""
+"""Convert XML to Python objects.
+
 Source: http://code.activestate.com/recipes/534109-xml-to-python-data-structure/
 Author: Wai Yip Tung
 Some minor modifications have been made.
@@ -8,7 +9,8 @@ import re
 import xml.sax.handler
 
 def xml2obj(src):
-    """A simple function that converts XML data into a native Python object.
+    """A simple function that converts XML data into a native Python
+    object.
     """
 
     non_id_char = re.compile('[^_0-9a-zA-Z]')
