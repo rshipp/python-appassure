@@ -106,7 +106,7 @@ for section in ${data}; do
     fi
 
     # Formulate the final request string and determine function args.
-    if [[ ${method} != 'GET' ]]; then
+    if [[ ${method} != GET && ${method} != DELETE ]]; then
         # This part can't be automated easily, you'll have to copy this
         # info from the docs.
         echo -n "XML tag for ${function} (blank for no request body): "
