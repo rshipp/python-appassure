@@ -7,13 +7,12 @@ API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
 ## Installation
 
     git clone https://github.com/george2/python-appassure.git
-    pip install -r requirements.txt
-    # TODO: Create setup.py for installation
+    cd python-appassure
+    python setup.py install
 
 ## Usage
 
     from appassure.core.ITemplate import ITemplate
-    from appassure.session import AppAssureSession
     s = AppAssureSession('myappassure5coreserver', 8006, 'Username',
             'password')
     a = ITemplate(s)
