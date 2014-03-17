@@ -15,21 +15,31 @@ babyCamel() {
     echo "$(tr [A-Z] [a-z] <<< ${1::1})${1:1}"
 }
 
-echo -n "Interface name: "
-read interface
+getData() {
+    echo "$(wget -q -O- "${1}" |
+            html2text -ascii -nobs |
+            grep -v Child_Pages |
+            sed 's/\*\*\*\*\*$//g' |
+            awk '/\*\*\*\*\*/,/HTTP Method: /' |
+            sed 's/[^*]\*[^*]//; s/\*\*\*\*\* /*/g')"
+}
 
+read -p "Interface name: " interface
 echo "Downloading and parsing AppAssure docs..."
-
-data="$(wget -q -O- "${URL}/${interface}" |
-        html2text -ascii -nobs |
-        grep -v Child_Pages |
-        sed 's/\*\*\*\*\*$//g' |
-        awk '/\*\*\*\*\*/,/HTTP Method: /' |
-        sed 's/[^*]\*[^*]//; s/\*\*\*\*\* /*/g')"
+data="$(getData "$URL/$interface")"
 
 if [[ -z $data ]]; then
     echo "Failed. Bad interface name?"
-    exit 1
+    echo "Some pages in the AppAssure docs follow a different format."
+    echo "If you'd like, you can enter the URL manually, and we'll try again."
+    read -p "Continue? [y/N]: " ans
+    [[ $ans == y || $ans == Y ]] || exit
+    read -p "URL: " URL
+    data="$(getData "$URL")"
+    if [[ -z $data ]]; then
+        echo "Failed again. Giving up this time."
+        exit 1
+    fi
 fi
 
 echo "Creating new Python script ${interface}.py"
@@ -70,6 +80,7 @@ for section in ${data}; do
     summary="$(sed 's/          *Summary: //' <<< "${summaryTemp}")"
     if ! [[ ${summary: -1} == . ]]; then
         summary="${summary}."
+    fi
     IFS='*'
 
     # Translate our URI into the format expected by Python.
