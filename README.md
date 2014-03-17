@@ -15,7 +15,7 @@ API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
 ```python
 # Import the interface(s) you want to work with, and the session
 # manager.
-from appassure.core.ITemplate import ILocalMountsManagement
+from appassure.core.ITemplate import ILocalMountManagement
 from appassure.session import AppAssureSession
 
 # Set up a session. The same session can be used for multiple
@@ -24,7 +24,7 @@ session = AppAssureSession('myappassure5coreserver', 8006, 'Username',
         'password')
 
 # Pass the session to the interface(s) on creation.
-mounts = ILocalMountsManagement(session)
+mounts = ILocalMountManagement(session)
 
 # Call methods from the interface. Response data can be accessed
 # with object or dictionary syntax.
