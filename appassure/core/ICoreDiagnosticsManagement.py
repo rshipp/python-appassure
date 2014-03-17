@@ -8,9 +8,9 @@ class ICoreDiagnosticsManagement(AppAssureAPI):
     """
 
     def uploadLogSessions(self):
-        """Uploads the current logs for this core and all 
-        online, protected agents to Gibraltar 
-        (http://www.gibraltarsoftware.com/) via a background job; 
+        """Uploads the current logs for this core and all
+        online, protected agents to Gibraltar
+        (http://www.gibraltarsoftware.com/) via a background job;
         returns the ID of that job.
         """
         return self.session.request('corediag/logs/', 'POST')

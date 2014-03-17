@@ -13,7 +13,7 @@ class IExportQueueManagement(AppAssureAPI):
 
     def setConfiguration(self, data):
         """Sets the configuration of the VM export queue."""
-        return self.session.request('export/queue/config', 'POST', 
+        return self.session.request('export/queue/config', 'POST',
                     self.getXML(data, 'config'))
 
     def getQueueContents(self):
@@ -26,12 +26,12 @@ class IExportQueueManagement(AppAssureAPI):
 
     def getEntryInfo(self, exportid):
         """Gets the info for a specific export queue entry."""
-        return self.session.request('export/queue/entries/%s' 
+        return self.session.request('export/queue/entries/%s'
                 % (exportid))
 
     def cancelExports(self, data):
-        """Cancels the export queue entrys identified by the 
+        """Cancels the export queue entrys identified by the
         export IDs.
         """
-        return self.session.request('export/queue/entries/cancel', 'POST', 
+        return self.session.request('export/queue/entries/cancel', 'POST',
                     self.getXML(data, 'cancelExportsRequest'))

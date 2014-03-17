@@ -8,11 +8,11 @@ class ICoreCallbackManagement(AppAssureAPI):
     """
 
     def processAgentProtectionRequest(self, data):
-        """The method is called by failover agent in order to 
-        perform remote pairing. This method is for internal usage 
+        """The method is called by failover agent in order to
+        perform remote pairing. This method is for internal usage
         only.
         """
-        return self.session.request('corecallback/agentprotectionrequest', 'POST', 
+        return self.session.request('corecallback/agentprotectionrequest', 'POST',
                     self.getXML(data, 'coreCallbackRequest'))
 
     def verifyConnect(self):

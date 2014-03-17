@@ -9,7 +9,7 @@ Note that you should never need to override the __init__ function.
 from appassure.appassureapi import AppAssureAPI
 
 class ITemplate(AppAssureAPI):
-    
+
     def getExampleData(self):
         """Gets example data."""
         return self.session.request('templateuri')

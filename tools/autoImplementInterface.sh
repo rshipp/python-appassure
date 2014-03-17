@@ -73,7 +73,7 @@ for section in ${data}; do
     for line in $(grep -vP "^(URI: |HTTP Method: |${function})" <<< "${section}"); do
         summary="${summary} ${line}"
     done
-    summary="$(fold -s -w61 <<< "${summary}")"
+    summary="$(fold -s -w65 <<< "${summary}")"
     for line in ${summary}; do
         summaryTemp="${summaryTemp}        ${line}${newline}"
     done
@@ -132,7 +132,7 @@ for section in ${data}; do
     cat << EOF >> ${interface}.py
     def $(babyCamel ${function})(${arguments}):
 EOF
-    if [[ $(wc -c <<< ${summary}) -lt 61 ]]; then 
+    if [[ $(wc -c <<< ${summary}) -lt 65 ]]; then 
         cat << EOF >> ${interface}.py
         """${summary}"""
 EOF
@@ -149,4 +149,4 @@ EOF
 done
 
 # Clean up the file.
-sed -i '$ d' "${interface}.py"
+sed -i '$ d; s/ *$//' "${interface}.py"

@@ -9,35 +9,35 @@ class IClustersManagement(AppAssureAPI):
 
     def convertAgentToClusterNode(self, agentId):
         """Convert regular agent to cluster node."""
-        return self.session.request('clusters/%s/convertToNode' 
+        return self.session.request('clusters/%s/convertToNode'
                 % (agentId), 'POST')
 
     def addClusterNodeAgent(self, data, clusterId):
         """Add cluster node to existing cluster."""
-        return self.session.request('clusters/%s/nodes/new' 
-                % (clusterId), 'POST', 
+        return self.session.request('clusters/%s/nodes/new'
+                % (clusterId), 'POST',
                     self.getXML(data, 'addAgentRequest'))
 
     def convertClusterNodeToAgent(self, clusterNodeId):
         """Convert cluster node to regular agent."""
-        return self.session.request('clusters/%s/convertToAgent' 
+        return self.session.request('clusters/%s/convertToAgent'
                 % (clusterNodeId), 'POST')
 
     def getClusterNodes(self, clusterAgentId):
-        """Gets a list of cluster nodes for specified cluster 
+        """Gets a list of cluster nodes for specified cluster
         agent.
         """
-        return self.session.request('clusters/clusterNodes/%s' 
+        return self.session.request('clusters/clusterNodes/%s'
                 % (clusterAgentId))
 
     def addClusterAgent(self, data):
         """Protect the cluster with nodes."""
-        return self.session.request('clusters/new', 'PUT', 
+        return self.session.request('clusters/new', 'PUT',
                     self.getXML(data, 'addClusterRequest'))
 
     def getReplicatedClusterNodes(self, clusterAgentId):
-        """Gets a list of replicated cluster nodes for 
+        """Gets a list of replicated cluster nodes for
         specified cluster agent.
         """
-        return self.session.request('clusters/replicatedClusterNodes/%s' 
+        return self.session.request('clusters/replicatedClusterNodes/%s'
                 % (clusterAgentId))

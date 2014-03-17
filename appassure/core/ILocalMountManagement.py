@@ -7,14 +7,14 @@ class ILocalMountManagement(AppAssureAPI):
     http://docs.appassure.com/display/AA50D/ILocalMountManagement
     """
 
-    
+
     def startMount(self, data):
         """Starts mounting a specified recovery point.
 
         data must be a correctly formatted dictionary containing the
         information described at
         http://docs.appassure.com/display/AA50D/ILocalMountManagement#ILocalMountManagement-StartMount
-           
+
         The following is an example request dict object:
 
             {
