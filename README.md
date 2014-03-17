@@ -12,6 +12,10 @@ API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
 
 ## Usage
 
+Here's a simple example using the
+[ILocalMountManagement](http://docs.appassure.com/display/AA50D/ILocalMountManagement)
+interface.
+
 ```python
 # Import the interface(s) you want to work with, and the session
 # manager.
