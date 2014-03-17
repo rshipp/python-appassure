@@ -147,3 +147,6 @@ EOF
 
 EOF
 done
+
+# Clean up the file.
+sed -i '$ d' "${interface}.py"
