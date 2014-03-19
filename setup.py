@@ -21,7 +21,7 @@ setup(
     long_description=README,
     url='https://github.com/george2/python-appassure',
     author='george2',
-    author_email='george@chakra-project.org',
+    author_email='rpubaddr0@gmail.com',
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
