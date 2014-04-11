@@ -36,7 +36,7 @@ class AppAssureSession(object):
         argument is only provided in case your situation is
         different. (For example, if you use Active Directory, perhaps
         your AppAssure server will need to verify with a certain
-        domain.
+        domain.)
         """
         self.username = username
         self.baseurl = "https://%s:%s/" % (host, port)
