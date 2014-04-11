@@ -6,7 +6,7 @@ well-formed XML requests through a given AppAssureSession object.
 
 class AppAssureAPI(object):
     """Allows us to request data from the API as a logged-in user."""
-    
+
     def __init__(self, session):
         """You MUST provide a valid AppAssureSession object as a
         parameter when creating a new AppAssureAPI object.

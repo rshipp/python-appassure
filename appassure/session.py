@@ -29,7 +29,7 @@ class InvalidURIError(Exception):
 
 class AppAssureSession(object):
     """Allows us to request data from the API as a logged-in user."""
-    
+
     def __init__(self, host, port, username, password, domain='DOMAIN'):
         """The default domain of 'DOMAIN' is used because the AppAssure
         server does not seem to use this value at all. The optional

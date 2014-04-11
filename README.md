@@ -44,7 +44,7 @@ to add an interface that is not already implemented, it is fairly simple
 to do so. In the [tools](tools) folder, there is a bash
 script that will pull from the AppAssure documentation and automate most
 of the implementation process. You will, however, still need to enter
-the wrapper XML tag for the XML request body, if that exists. 
+the wrapper XML tag for the XML request body, if that exists.
 
 ![xml tag](http://i.imgur.com/HNsxslV.png)
 

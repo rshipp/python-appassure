@@ -101,25 +101,3 @@ def xml2obj(src):
     else:
         xml.sax.parse(src, builder)
     return builder.root._attrs.values()[0]
-
-
-def dict2xml(d, root="root"):
-    """Converts Python dictionaries to XML strings."""
-
-    op = lambda tag: '<' + tag + '>'
-    cl = lambda tag: '</' + tag + '>'
-    ml = lambda v,xml: xml + op(key) + str(v) + cl(key)
-
-    xml = op(root)
-
-    for key,vl in d.iteritems():
-        vtype = type(vl)
-        if vtype is list: 
-            for v in vl:
-                xml = ml(v,xml)         
-        if vtype is dict: xml = ml(dict2xml(vl,None),xml)         
-        if vtype is not list and vtype is not dict: xml = ml(vl,xml)
-
-    xml += cl(root) if root else ""
-
-    return xml

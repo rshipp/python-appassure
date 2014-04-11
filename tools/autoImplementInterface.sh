@@ -67,7 +67,7 @@ for section in ${data}; do
 
     # If the function is blank, get out fast
     [[ -z ${function} ]] && continue
-    
+
     # Parse out and prettify the summary.
     IFS=$'\n'
     for line in $(grep -vP "^(URI: |HTTP Method: |${function})" <<< "${section}"); do
@@ -89,18 +89,18 @@ for section in ${data}; do
         if (grep -q '%s' <<< "${pyuri}"); then
             IFS='/'
             for field in ${uri}; do
-                uriVars+=("$(grep '{.*}' <<< "${field}" | 
+                uriVars+=("$(grep '{.*}' <<< "${field}" |
                     sed 's/[{}]//g; s/.*=//g')")
             done
             IFS='*'
         fi
-        pyuri="'${pyuri}' 
+        pyuri="'${pyuri}'
                 % ("
         for var in ${uriVars[@]}; do
             [[ -n ${var} ]] && pyuri="${pyuri}${var}, "
         done
         pyuri="$(sed 's/, )/)/g' <<< "${pyuri})")"
-    
+
     else
         pyuri="'${uri}'"
     fi
@@ -114,7 +114,7 @@ for section in ${data}; do
         if [[ -z $tag ]]; then
             request="${pyuri}, '${method}'"
         else
-            request="${pyuri}, '${method}', 
+            request="${pyuri}, '${method}',
                     self.getXML(data, '${tag}')"
             arguments="$arguments, data"
         fi
@@ -132,7 +132,7 @@ for section in ${data}; do
     cat << EOF >> ${interface}.py
     def $(babyCamel ${function})(${arguments}):
 EOF
-    if [[ $(wc -c <<< ${summary}) -lt 65 ]]; then 
+    if [[ $(wc -c <<< ${summary}) -lt 65 ]]; then
         cat << EOF >> ${interface}.py
         """${summary}"""
 EOF
