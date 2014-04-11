@@ -123,7 +123,7 @@ def dict2xml(d, root="root"):
         if vtype is list: 
             for v in vl:
                 xml = ml(v,xml)         
-        if vtype is dict: xml = ml('\n' + d2x(vl,None),xml)         
+        if vtype is dict: xml = ml('\n' + dict2xml(vl,None),xml)         
         if vtype is not list and vtype is not dict: xml = ml(vl,xml)
 
     xml += cl(root) if root else ""
