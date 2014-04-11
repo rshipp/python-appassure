@@ -1,14 +1,8 @@
-"""Convert XML to Python objects, and Python dictionaries to XML
-strings. Contains 2 functions: xml2obj, and dict2xml. Some minor
-modifications have been made to the authors original work.
+"""Convert XML to Python objects.
 
-## xml2obj
 Source: http://code.activestate.com/recipes/534109-xml-to-python-data-structure/
 Author: Wai Yip Tung
-
-## dict2xml
-Source: https://stackoverflow.com/questions/3292973/xml-to-from-a-python-dictionary
-Author: Dmitry Horonitel
+Some minor modifications have been made.
 """
 
 import re
@@ -113,17 +107,17 @@ def dict2xml(d, root="root"):
     """Converts Python dictionaries to XML strings."""
 
     op = lambda tag: '<' + tag + '>'
-    cl = lambda tag: '</' + tag + '>\n'
+    cl = lambda tag: '</' + tag + '>'
     ml = lambda v,xml: xml + op(key) + str(v) + cl(key)
 
-    xml = op(root) + '\n' if root else ""
+    xml = op(root)
 
     for key,vl in d.iteritems():
         vtype = type(vl)
         if vtype is list: 
             for v in vl:
                 xml = ml(v,xml)         
-        if vtype is dict: xml = ml('\n' + dict2xml(vl,None),xml)         
+        if vtype is dict: xml = ml(dict2xml(vl,None),xml)         
         if vtype is not list and vtype is not dict: xml = ml(vl,xml)
 
     xml += cl(root) if root else ""

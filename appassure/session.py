@@ -4,7 +4,7 @@ Handles logging in to and sending and retrieving data from an
 AppAssure core server. Returns requested data as a Python object.
 """
 
-from appassure.xmlhandler import xml2obj
+from appassure.xml2obj import xml2obj
 import requests
 from requests_ntlm import HttpNtlmAuth
 

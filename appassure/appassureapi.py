@@ -42,7 +42,12 @@ class AppAssureAPI(object):
 
         This is an internal function, do not use it.
         """
-        if type(data) == type({'':''}):
+        if type(data) == type(list()):
+            # if data is a list
+            xml = ""
+            for item in data:
+                xml += self._getXML(item, objname)
+        elif type(data) == type(dict()):
             # if data is a dict
             xml = "<%s>" % objname
             for key, value in data.items():
