@@ -19,7 +19,7 @@ interface.
 ```python
 # Import the interface(s) you want to work with, and the session
 # manager.
-from appassure.core.ITemplate import ILocalMountManagement
+from appassure.core.ILocalMountManagement import ILocalMountManagement
 from appassure.session import AppAssureSession
 
 # Set up a session. The same session can be used for multiple
