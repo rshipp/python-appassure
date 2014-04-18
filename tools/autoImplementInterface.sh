@@ -26,7 +26,8 @@ getData() {
 
 read -p "Interface name: " interface
 echo "Downloading and parsing AppAssure docs..."
-data="$(getData "$URL/$interface")"
+interface_url="${URL}${interface}"
+data="$(getData "$interface_url")"
 
 if [[ -z $data ]]; then
     echo "Failed. Bad interface name?"
@@ -34,8 +35,8 @@ if [[ -z $data ]]; then
     echo "If you'd like, you can enter the URL manually, and we'll try again."
     read -p "Continue? [y/N]: " ans
     [[ $ans == y || $ans == Y ]] || exit
-    read -p "URL: " URL
-    data="$(getData "$URL")"
+    read -p "URL: " interface_url
+    data="$(getData "$interface_url")"
     if [[ -z $data ]]; then
         echo "Failed again. Giving up this time."
         exit 1
@@ -50,7 +51,7 @@ from appassure.appassureapi import AppAssureAPI
 
 class ${interface}(AppAssureAPI):
     """Full documentation online at
-    http://docs.appassure.com/display/AA50D/${interface}
+    ${interface_url}
     """
 
 EOF
