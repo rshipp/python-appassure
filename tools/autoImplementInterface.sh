@@ -45,7 +45,7 @@ fi
 
 echo "Creating new Python script ${interface}.py"
 cat << EOF > ${interface}.py
-"""AppAssure 5 Core API"""
+"""AppAssure 5 REST API"""
 
 from appassure.appassureapi import AppAssureAPI
 
