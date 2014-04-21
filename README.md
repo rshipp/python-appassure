@@ -1,8 +1,8 @@
 python-appassure
 ================
 
-A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [Core
-API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
+A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [REST
+API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 
 ## Installation
 
@@ -14,7 +14,7 @@ API](http://docs.appassure.com/display/AA50D/Core+API+Reference).
 
 Here's a simple example using the
 [ILocalMountManagement](http://docs.appassure.com/display/AA50D/ILocalMountManagement)
-interface.
+Core interface.
 
 ```python
 # Import the interface(s) you want to work with, and the session

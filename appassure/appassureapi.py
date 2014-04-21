@@ -1,6 +1,6 @@
 """Python wrapper for the AppAssure 5 REST API.
 
-Provides an abstraction layer for using the AppAssure core API. Sends
+Provides an abstraction layer for using the AppAssure 5 API. Sends
 well-formed XML requests through a given AppAssureSession object.
 """
 
@@ -35,7 +35,7 @@ class AppAssureAPI(object):
 
     def _getXML(self, data, objname=None):
         """Convert a Python object into XML in the format expected by
-        the AppAssure Core server.
+        the AppAssure server.
 
         Original source:
         http://code.activestate.com/recipes/440595-extensible-object-to-xml-convertor/
@@ -60,7 +60,7 @@ class AppAssureAPI(object):
 
     def getXML(self, data, objname=None):
         """Convert a Python object into XML in the format expected by
-        the AppAssure Core server.
+        the AppAssure server.
 
         data should be a dict, and objname should be a string.
         """
