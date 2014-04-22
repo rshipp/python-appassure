@@ -4,6 +4,8 @@ Provides an abstraction layer for using the AppAssure 5 API. Sends
 well-formed XML requests through a given AppAssureSession object.
 """
 
+import datetime
+
 class AppAssureAPI(object):
     """Allows us to request data from the API as a logged-in user."""
 
@@ -21,6 +23,25 @@ class AppAssureAPI(object):
         is nothing to do here.
         """
         pass
+
+    def formatTime(self, time):
+        """Convert a datetime object to a string in the format expected
+        by the AppAssure API.
+        """
+        return time.isoformat()[:-3]+'Z'
+
+    def deformatTime(self, string):
+        """Convert a string in the format used by the AppAssure API to a
+        datetime object.
+        """
+        return datetime.datetime.strptime(string[:-1],
+                "%Y-%m-%dT%H:%M:%S.%f")
+
+    def now(self):
+        """Return the current time as a string in the format expected by
+        the AppAssure API.
+        """
+        return self.formatTime(datetime.datetime.now())
 
     def _getXMLEndTag(self, starttag):
         """Deal with things like
