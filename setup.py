@@ -17,7 +17,7 @@ setup(
     include_package_data=True,
     install_requires=requires,
     license='BSD New',
-    description='A Python wrapper for the AppAssure 5 API.',
+    description='A Python wrapper for the AppAssure 5 REST API.',
     long_description=README,
     url='https://github.com/george2/python-appassure',
     author='george2',
