@@ -6,7 +6,7 @@ http://docs.appassure.com/display/AA50D/Core+API+Reference
 Note that you should never need to override the __init__ function.
 """
 
-from appassure.appassureapi import AppAssureAPI
+from appassure.api import AppAssureAPI
 
 class ITemplate(AppAssureAPI):
 

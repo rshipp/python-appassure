@@ -1,6 +1,6 @@
 """AppAssure 5 Core API"""
 
-from appassure.appassureapi import AppAssureAPI
+from appassure.api import AppAssureAPI
 
 class ISqlManagement(AppAssureAPI):
     """Full documentation online at

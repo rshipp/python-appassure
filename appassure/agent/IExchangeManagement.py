@@ -1,6 +1,6 @@
 """AppAssure 5 REST API"""
 
-from appassure.appassureapi import AppAssureAPI
+from appassure.api import AppAssureAPI
 
 class IExchangeManagement(AppAssureAPI):
     """Full documentation online at
