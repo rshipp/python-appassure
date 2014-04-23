@@ -41,7 +41,7 @@ class AppAssureAPI(object):
         """Return the current time as a string in the format expected by
         the AppAssure API.
         """
-        return self.formatTime(datetime.datetime.now())
+        return self.formatTime(datetime.datetime.utcnow())
 
     def _getXMLEndTag(self, starttag):
         """Deal with things like
