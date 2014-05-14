@@ -5,6 +5,7 @@ well-formed XML requests through a given AppAssureSession object.
 """
 
 import datetime
+from collections import OrderedDict
 
 class AppAssureAPI(object):
     """Allows us to request data from the API as a logged-in user."""
@@ -28,7 +29,7 @@ class AppAssureAPI(object):
         """Convert a datetime object to a string in the format expected
         by the AppAssure API.
         """
-        return time.isoformat()[:-3]+'Z'
+        return time.isoformat()[:-7]
 
     def deformatTime(self, string):
         """Convert a string in the format used by the AppAssure API to a
@@ -68,7 +69,7 @@ class AppAssureAPI(object):
             xml = ""
             for item in data:
                 xml += self._getXML(item, objname)
-        elif type(data) == type(dict()):
+        elif (type(data) == type(dict())) or (type(data) == type(OrderedDict())):
             # if data is a dict
             xml = "<%s>" % objname
             for key, value in data.items():
