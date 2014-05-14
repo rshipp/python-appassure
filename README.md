@@ -12,6 +12,23 @@ API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 
 ## Usage
 
+This library is well documented using Python docstrings, so if at any
+point you get lost, try reading the documentation using Python's
+built-in `help()` function, or simply browsing the source code.
+
+The usual method of using the library is:
+
+1. Import the required modules and classes
+2. Set up a session object.
+3. Pass the session into a new API interface.
+4. Use the interface.
+
+Because the API uses a non-standard time format, a few time-related
+methods are included in the `appassure.api.AppAssureAPI` class that
+might come in handy.
+
+### Examples
+
 Here's a simple example using the
 [ILocalMountManagement](http://docs.appassure.com/display/AA50D/ILocalMountManagement)
 Core interface.
@@ -101,6 +118,19 @@ mountData = OrderedDict([
 ])
 mounts.startMount(mountData)
 ```
+
+You might find that you need to pass in or read timestamps from the API.
+Using the methods built in to the API class of this library can help
+make that easier. The `formatTime(time)`, `deformatTime(string)`, and
+`reformatTime(string)` methods all use Python's `datetime` module to
+make dealing with timestamps in the format expected by the AppAssure API
+easier. Note that all timestamps sent to or recieved from the AppAssure
+API should be UTC.
+
+```python
+mounts.formatTime(datetime.datetime.utcnow())
+```
+
 
 ## Implementing New Interfaces
 AppAssure has quite a few of what it calls
