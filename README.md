@@ -64,8 +64,7 @@ object that will be converted to XML by the the library. Here's an
 example using raw XML.
 
 ```python
-mountData = """<?xml version="1.0" encoding="utf-16"?>
-<mountRequest xmlns="http://apprecovery.com/management/api/2010/05">
+mountData = """
   <agentIds>
     <agentId>1627aea5-8e0a-4371-9022-9b504344e724</agentId>
     <agentId>1627aea5-8e0a-4371-9022-9b504344e724</agentId>
@@ -84,7 +83,7 @@ mountData = """<?xml version="1.0" encoding="utf-16"?>
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">String content</string>
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">String content</string>
   </volumeImagesToMount>
-</mountRequest>"""
+"""
 mounts.startMount(mountData)
 ```
 
