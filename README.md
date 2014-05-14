@@ -128,6 +128,7 @@ easier. Note that all timestamps sent to or recieved from the AppAssure
 API should be UTC.
 
 ```python
+import datetime
 mounts.formatTime(datetime.datetime.utcnow())
 ```
 
