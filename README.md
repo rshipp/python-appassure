@@ -72,7 +72,10 @@ from collections import OrderedDict
 
 mountData = OrderedDict([
     ('agentIds', {
-        'agentId': ['1627aea5-8e0a-4371-9022-9b504344e724', '1627aea5-8e0a-4371-9022-9b504344e724'],
+        'agentId': [
+            '1627aea5-8e0a-4371-9022-9b504344e724',
+            '1627aea5-8e0a-4371-9022-9b504344e724',
+        ],
     }),
     ('isNightlyJob', 'true'),
     ('jobId', '1627aea5-8e0a-4371-9022-9b504344e724'),
