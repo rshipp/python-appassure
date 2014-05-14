@@ -38,6 +38,12 @@ class AppAssureAPI(object):
         return datetime.datetime.strptime(string[:-1],
                 "%Y-%m-%dT%H:%M:%S.%f")
 
+    def reformatTime(self, string):
+        """Convert a string in the format used by the AppAssure API to a
+        datetime object, then back to a human readable string.
+        """
+        return self.formatTime(self.deformatTime(string)).replace('T', ' ')
+
     def now(self):
         """Return the current time as a string in the format expected by
         the AppAssure API.
