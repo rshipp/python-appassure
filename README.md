@@ -42,7 +42,7 @@ Some methods take simple parameters.
 mounts.dismount('my_named_mount')
 ```
 
-Others must be passed in EITHER valid XML data, OR a dictionary
+Others must be passed in either valid XML data, or a dictionary
 object that will be converted to XML by the the library. Here's an
 example using raw XML.
 
