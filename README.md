@@ -34,6 +34,58 @@ mounts = ILocalMountManagement(session)
 # with object or dictionary syntax.
 mounts.getMounts().mountInfo
 mounts.getMounts()['mountInfo']
+
+# Some methods take simple parameters.
+mounts.dismount('my_named_mount')
+
+# Others must be passed in EITHER valid XML data, OR a dictionary
+# object that will be converted to XML by the the library. Here's an
+# example using raw XML.
+mountData = """<?xml version="1.0" encoding="utf-16"?>
+<mountRequest xmlns="http://apprecovery.com/management/api/2010/05">
+  <agentIds>
+    <agentId>1627aea5-8e0a-4371-9022-9b504344e724</agentId>
+    <agentId>1627aea5-8e0a-4371-9022-9b504344e724</agentId>
+  </agentIds>
+  <force>true</force>
+  <isNightlyJob>true</isNightlyJob>
+  <jobId>1627aea5-8e0a-4371-9022-9b504344e724</jobId>
+  <jobStartsCount>4294967295</jobStartsCount>
+  <nightlyJobTransactionId>1627aea5-8e0a-4371-9022-9b504344e724</nightlyJobTransactionId>
+  <mountPoint>String content</mountPoint>
+  <recoveryPoint>String content</recoveryPoint>
+  <shareAllowedGroup>String content</shareAllowedGroup>
+  <shareName>String content</shareName>
+  <type>None</type>
+  <volumeImagesToMount>
+    <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">String content</string>
+    <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">String content</string>
+  </volumeImagesToMount>
+</mountRequest>"""
+mounts.startMount(mountData)
+
+# Some API methods require data to be in a certain order- in these
+# cases, Python's collections.OrderedDict must be used instead of
+# the built-in dict type. Another example identical to the one above,
+# but using an OrderedDict object:
+from collections import OrderedDict
+
+mountData = OrderedDict([
+    ('agentIds', {
+        'agentId': ['1627aea5-8e0a-4371-9022-9b504344e724', '1627aea5-8e0a-4371-9022-9b504344e724'],
+    }),
+    ('isNightlyJob', 'true'),
+    ('jobId', '1627aea5-8e0a-4371-9022-9b504344e724'),
+    ('mountPoint', 'String content'),
+    ('recoveryPoint', 'String content'),
+    ('shareAllowedGroup', 'String content'),
+    ('shareName', 'String content'),
+    ('type', 'None'),
+    ('volumeImagesToMount', {
+        'string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"': ['String content', 'String content'],
+    }),
+])
+mounts.startMount(mountData)
 ```
 
 ## Implementing New Interfaces
