@@ -82,7 +82,9 @@ mountData = OrderedDict([
     ('shareName', 'String content'),
     ('type', 'None'),
     ('volumeImagesToMount', {
-        'string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"': ['String content', 'String content'],
+        'string xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"': [
+            'String content', 'String content'
+        ],
     }),
 ])
 mounts.startMount(mountData)
