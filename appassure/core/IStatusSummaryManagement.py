@@ -1,4 +1,4 @@
-"""AppAssure 5 Core API"""
+"""AppAssure 5 REST API"""
 
 from appassure.api import AppAssureAPI
 
@@ -22,6 +22,10 @@ class IStatusSummaryManagement(AppAssureAPI):
         """
         return self.session.request('status/coreSystemInfo')
 
+    def crash(self):
+        """Crashes the process."""
+        return self.session.request('status/crash')
+
     def getDashboardInfo(self):
         """Get the status info necessary to display the dashboard
         on the main screen.
@@ -36,6 +40,13 @@ class IStatusSummaryManagement(AppAssureAPI):
     def getFailedServicesInfo(self):
         """Gets names of services failed to initialize."""
         return self.session.request('status/failedServicesInfo')
+
+    def getLatestEvents(self):
+        """Gets latest core events info such as events
+        accumulated since last call to itself or start of core if call
+        is first.
+        """
+        return self.session.request('status/latestEventsInfo')
 
     def retryStartFailedServices(self):
         """Tries to restart failed services."""
