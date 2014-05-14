@@ -34,13 +34,19 @@ mounts = ILocalMountManagement(session)
 # with object or dictionary syntax.
 mounts.getMounts().mountInfo
 mounts.getMounts()['mountInfo']
+```
 
-# Some methods take simple parameters.
+Some methods take simple parameters.
+
+```python
 mounts.dismount('my_named_mount')
+```
 
-# Others must be passed in EITHER valid XML data, OR a dictionary
-# object that will be converted to XML by the the library. Here's an
-# example using raw XML.
+Others must be passed in EITHER valid XML data, OR a dictionary
+object that will be converted to XML by the the library. Here's an
+example using raw XML.
+
+```python
 mountData = """<?xml version="1.0" encoding="utf-16"?>
 <mountRequest xmlns="http://apprecovery.com/management/api/2010/05">
   <agentIds>
@@ -63,11 +69,14 @@ mountData = """<?xml version="1.0" encoding="utf-16"?>
   </volumeImagesToMount>
 </mountRequest>"""
 mounts.startMount(mountData)
+```
 
-# Some API methods require data to be in a certain order- in these
-# cases, Python's collections.OrderedDict must be used instead of
-# the built-in dict type. Another example identical to the one above,
-# but using an OrderedDict object:
+Some API methods require data to be in a certain order- in these
+cases, Python's `collections.OrderedDict` must be used instead of
+the built-in `dict` type. Another example identical to the one above,
+but using an `OrderedDict` object:
+
+```python
 from collections import OrderedDict
 
 mountData = OrderedDict([
