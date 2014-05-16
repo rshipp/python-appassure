@@ -119,7 +119,7 @@ mounts.startMount(mountData)
 ```
 
 You might find that you need to pass in or read timestamps from the API.
-Using the methods built in to the API class of this library can help
+Using the methods built in to the time module of this library can help
 make that easier. The `formatTime(time)`, `deformatTime(string)`, and
 `reformatTime(string)` methods all use Python's `datetime` module to
 make dealing with timestamps in the format expected by the AppAssure API
@@ -128,7 +128,9 @@ API should be UTC.
 
 ```python
 import datetime
-mounts.formatTime(datetime.datetime.utcnow())
+from appassure import time
+
+time.formatTime(datetime.datetime.utcnow())
 ```
 
 ## Contributing

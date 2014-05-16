@@ -12,8 +12,8 @@ requires = requirements.strip().split('\n')
 
 setup(
     name='appassure',
-    version='0.1',
-    packages=['appassure'],
+    version='0.2',
+    packages=['appassure', 'appassure.core', 'appassure.agent'],
     include_package_data=True,
     install_requires=requires,
     license='BSD New',
