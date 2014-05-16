@@ -97,7 +97,7 @@ def xml2obj(src):
 
     builder = TreeBuilder()
     if isinstance(src,basestring):
-        xml.sax.parseString(src, builder)
+        xml.sax.parseString(src.encode('utf-8'), builder)
     else:
         xml.sax.parse(src, builder)
     return builder.root._attrs.values()[0]

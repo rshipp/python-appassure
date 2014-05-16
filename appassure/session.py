@@ -107,4 +107,4 @@ class AppAssureSession(object):
             return xml2obj(response.text)
         else:
             raise InvalidURIError("The server returned an error message.",
-                   response.text, self.apiurl + uri)
+                   response, self.apiurl + uri)
