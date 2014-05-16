@@ -4,6 +4,32 @@ python-appassure
 A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [REST
 API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 
+## AppAssure
+
+### Features
+
+> Backup, replication and disaster recovery in a single solution
+>
+> *  Restore your entire server and retrieve all of your data in seconds
+> *  Protect your workloads on VMs, physical servers and in the cloud
+> *  Restore to dissimilar systems, physical or virtual
+> *  Recover Microsoft® Exchange, SQL Server® and SharePoint® applications
+> *  Ensure built-in disaster recovery with hot standby VMs
+
+ -- [Dell.com](http://software.dell.com/products/appassure/)
+
+### About AppAssure
+
+> First acquired by Dell in 2012, AppAssure is now a part of Dell
+> Software. Dell AppAssure products (including the DL and DR family of
+> backup appliances) are already a key part of the Dell's award-wining
+> data protection portfolio which includes NetVault Backup and vRanger.
+> With Dell data protection software and appliances, you can match your
+> backup needs to your business and build the most efficient and
+> effective solution for your business.
+
+ -- [Dell.com](http://software.dell.com/acquisitions/appassure.aspx)
+
 ## Installation
 
     git clone https://github.com/george2/python-appassure.git
