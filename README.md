@@ -16,7 +16,7 @@ API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 > *  Recover Microsoft® Exchange, SQL Server® and SharePoint® applications
 > *  Ensure built-in disaster recovery with hot standby VMs
 
- -- [Dell.com](http://software.dell.com/products/appassure/)
+ -- *[Dell.com](http://software.dell.com/products/appassure/)*
 
 ### AppAssure and Dell
 
@@ -28,7 +28,7 @@ API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 > backup needs to your business and build the most efficient and
 > effective solution for your business.
 
- -- [Dell.com](http://software.dell.com/acquisitions/appassure.aspx)
+ -- *[Dell.com](http://software.dell.com/acquisitions/appassure.aspx)*
 
 ## Installation
 
