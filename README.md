@@ -18,7 +18,7 @@ API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 
  -- [Dell.com](http://software.dell.com/products/appassure/)
 
-### About AppAssure
+### AppAssure and Dell
 
 > First acquired by Dell in 2012, AppAssure is now a part of Dell
 > Software. Dell AppAssure products (including the DL and DR family of
