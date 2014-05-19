@@ -4,6 +4,8 @@ python-appassure
 A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [REST
 API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 
+![build status](https://travis-ci.org/george2/python-appassure.svg?branch=development)
+
 ## AppAssure
 
 ### Features
