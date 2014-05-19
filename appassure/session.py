@@ -43,7 +43,7 @@ class InvalidAPIError(AppAssureError):
 class AppAssureSession(object):
     """Allows us to request data from the API as a logged-in user."""
 
-    def __init__(self, host, port, username, password, api=CORE, domain='DOMAIN'):
+    def __init__(self, host=None, port=8006, username=None, password=None, api=CORE, domain='DOMAIN'):
         """The default domain of 'DOMAIN' is used because this value is
         only relevant if you are authenticating against Active Directory.
         Be sure to set this to the appropriate value if you use Active
@@ -62,6 +62,10 @@ class AppAssureSession(object):
         self.http = requests.Session()
         self.auth = HttpNtlmAuth('%s\\%s' % (domain, self.username),
                 password)
+        if host != None and username != None and password != None:
+            self.authenticate()
+
+    def authenticate(self):
         status = self.http.get(self.loginurl, verify=False,
                 auth=self.auth)
         if not status.ok:
