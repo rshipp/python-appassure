@@ -55,3 +55,7 @@ class TestAPI(unittest.TestCase):
         orderedxml = self.nonetag + '><key1>value1</key1><key2>value2</key2>' + \
             '<key3>item1</key3><key3>item2</key3></None>'
         assert self.api.getXML(ordereddict) == orderedxml
+
+    def test_xmlns_is_xmlns(self):
+        assert self.api.getXML('', 'tag xmlns="ns"') == self.xml + \
+            '<tag xmlns="ns" ' + self.xmlns + '></tag>'
