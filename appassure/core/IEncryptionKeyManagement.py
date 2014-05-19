@@ -55,7 +55,7 @@ class IEncryptionKeyManagement(AppAssureAPI):
                 % (keyId), 'POST',
                     self.getXML(data, 'newTemporaryPassphraseRequest'))
 
-    def import(self, data):
+    def import_(self, data):
         """Imports an exported key."""
         return self.session.request('encryption/import', 'POST',
                     self.getXML(data, 'exportedKey'))

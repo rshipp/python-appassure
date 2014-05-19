@@ -24,7 +24,7 @@ class IBackupManagement(AppAssureAPI):
                     self.getXML(data, 'backupLocation'))
 
     def getBackupManifest(self, data, requestedCoreId):
-        """Gets the metadata for an existing core’s backup
+        """Gets the metadata for an existing core's backup
         by coreId.
         """
         return self.session.request('backup/metadataByCore/%s'

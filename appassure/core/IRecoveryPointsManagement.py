@@ -27,23 +27,23 @@ class IRecoveryPointsManagement(AppAssureAPI):
         return self.session.request('recoveryPoints/agents/%s/integritycheck/fix?fixErrors=%s'
                 % (agentId, fixErrors))
 
-    def getRecoveryPointsByPage(self, agentId, page):
+    def getRecoveryPointsByPage(self, agentId, max, page):
         """Gets summary info for recovery points for a given
         agent ID, such that the results are paged for easy viewing
         in a paged grid.
         """
         return self.session.request('recoveryPoints/agents/%s/paged?max=%s&page=%s'
-                % (agentId, page))
+                % (agentId, max, page))
 
-    def getRecoveryPoints(self, agentId):
+    def getRecoveryPoints(self, agentId, max, olderThan, newerThan):
         """Gets the summary information for the recovery
         points associated with a specified agent that fall outside
         of a last modified date/time range. You also specify a
         maximum number of recovery points to return with the
-        specified range. {olderThan}&newerThan={newerThan}
+        specified range.
         """
-        return self.session.request('recoveryPoints/agents/%s/where?max=%s&olderThan='
-                % (agentId))
+        return self.session.request('recoveryPoints/agents/%s/where?max=%s&olderThan=%s&newerThan=%s'
+                % (agentId, max, olderThan, newerThan))
 
     def mergeAgentRecoveryPoints(self, data, sourceAgentId):
         """Merges the recovery points of the agent ID
@@ -65,29 +65,29 @@ class IRecoveryPointsManagement(AppAssureAPI):
         return self.session.request('recoveryPoints/images/%s/'
                 % (imageId))
 
-    def getImageRawData(self):
+    def getImageRawData(self, imageId, blockOffset, blockLength):
         """Gets a stream of data consisting of the data in
         the image at the specified offset and length. Useful only
         for diagnostic purposes.
         """
-        return self.session.request('recoveryPoints/images/rawdata/%s.rawdata?blockOffset='
-                % ())
+        return self.session.request('recoveryPoints/images/rawdata/%s.rawdata?blockOffset=%s&blockLength=%s'
+                % (imageId, blockOffset, blockLength))
 
-    def getImageRawKeys(self, imageId.rawkeys):
+    def getImageRawKeys(self, imageId):
         """Gets a stream of offset/key pairs, containing the
         block offsets in the image and the DVM keys of the record at
         each block offset. Useful only for diagnostic purposes.
         """
         return self.session.request('recoveryPoints/images/rawkeys/%s.rawkeys'
-                % (imageId.rawkeys))
+                % (imageId))
 
-    def getImageRawKeysText(self, imageId.textkeys):
+    def getImageRawKeysText(self, imageId):
         """Gets a stream of offset/key pairs, containing the
         block offsets in the image and the DVM keys of the record at
         each block offset. Useful only for diagnostic purposes.
         """
         return self.session.request('recoveryPoints/images/rawkeys/%s.textkeys'
-                % (imageId.textkeys))
+                % (imageId))
 
     def getMostRecentRecoveryPoints(self, data):
         """Gets summary info for the most recent recovery
