@@ -32,7 +32,7 @@ def reformatTime(string):
     """Convert a string in the format used by the AppAssure API to a
     datetime object, then back to a human readable string.
     """
-    return formatTime(deformatTime(string)).replace('T', ' ')
+    return formatTime(deformatTime(string)).replace('T', ' ') + ' UTC'
 
 def now():
     """Return the current time as a string in the format expected by
