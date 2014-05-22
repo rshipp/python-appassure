@@ -15,8 +15,18 @@ def deformatTime(string):
     """Convert a string in the format used by the AppAssure API to a
     datetime object.
     """
-    return datetime.datetime.strptime(string[:-1],
-            "%Y-%m-%dT%H:%M:%S.%f")
+    if '.' in string and string.endswith('Z'):
+        return datetime.datetime.strptime(string[:-1][:26],
+                "%Y-%m-%dT%H:%M:%S.%f")
+    elif '.' in string:
+        return datetime.datetime.strptime(string[:26],
+                "%Y-%m-%dT%H:%M:%S.%f")
+    elif 'Z' in string:
+        return datetime.datetime.strptime(string[:-1][:19],
+                "%Y-%m-%dT%H:%M:%S")
+    else:
+        return datetime.datetime.strptime(string[:19],
+                "%Y-%m-%dT%H:%M:%S")
 
 def reformatTime(string):
     """Convert a string in the format used by the AppAssure API to a
