@@ -8,13 +8,15 @@ class TestTime(unittest.TestCase):
         self.timeobj = datetime.datetime(2010, 1, 2, 3, 4, 5, 123000)
         self.timestr = '2010-01-02T03:04:05'
         self.timeapi = '2010-01-02T03:04:05.123Z'
-        self.timehum = '2010-01-02 03:04:05'
+        self.timehum = '2010-01-02 03:04:05 UTC'
     
     def test_formatTime(self):
-        assert time.formatTime(self.timeobj) == self.timestr
+        self.assertEqual(time.formatTime(self.timeobj), self.timestr)
 
     def test_deformatTime(self):
-        assert time.deformatTime(self.timeapi) == self.timeobj
+        self.assertEqual(time.deformatTime(self.timeapi),
+                self.timeobj)
 
     def test_reformatTime(self):
-        assert time.reformatTime(self.timeapi) == self.timehum
+        self.assertEqual(time.reformatTime(self.timeapi),
+                self.timehum)
