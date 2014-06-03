@@ -5,6 +5,7 @@ A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [REST
 API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 
 [![Build Status](https://travis-ci.org/george2/python-appassure.svg?branch=development)](https://travis-ci.org/george2/python-appassure)
+[![Coverage Status](https://coveralls.io/repos/george2/python-appassure/badge.png?branch=development)](https://coveralls.io/r/george2/python-appassure?branch=development)
 
 ## AppAssure
 
