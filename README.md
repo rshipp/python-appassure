@@ -1,11 +1,14 @@
 python-appassure
 ================
 
+[![Build Status](https://travis-ci.org/george2/python-appassure.svg?branch=development)][travis]
+[![Coverage Status](https://coveralls.io/repos/george2/python-appassure/badge.png?branch=development)][coveralls]
+
+[travis]: https://travis-ci.org/george2/python-appassure
+[coveralls]: https://coveralls.io/r/george2/python-appassure?branch=development
+
 A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [REST
 API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
-
-[![Build Status](https://travis-ci.org/george2/python-appassure.svg?branch=development)](https://travis-ci.org/george2/python-appassure)
-[![Coverage Status](https://coveralls.io/repos/george2/python-appassure/badge.png?branch=development)](https://coveralls.io/r/george2/python-appassure?branch=development)
 
 ## AppAssure
 
@@ -16,7 +19,7 @@ API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 > *  Restore your entire server and retrieve all of your data in seconds
 > *  Protect your workloads on VMs, physical servers and in the cloud
 > *  Restore to dissimilar systems, physical or virtual
-> *  Recover Microsoft® Exchange, SQL Server® and SharePoint® applications
+> *  Recover Microsoftï¿½ Exchange, SQL Serverï¿½ and SharePointï¿½ applications
 > *  Ensure built-in disaster recovery with hot standby VMs
 
  -- *[Dell.com](http://software.dell.com/products/appassure/)*
