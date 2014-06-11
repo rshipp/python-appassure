@@ -71,7 +71,7 @@ class ILocalMountManagement(AppAssureAPI):
 
     def dismountAll(self):
         """Dismounts all mounted volumes."""
-        return self.session.request('mounts/allvolumes' % agentId,
+        return self.session.request('mounts/allvolumes',
                 'DELETE')
 
     def getMountOptions(self):
@@ -85,4 +85,4 @@ class ILocalMountManagement(AppAssureAPI):
         the Core server.
         """
         return self.session.request('mounts/volume/%s' %
-                monutedVolumeName, 'DELETE')
+                mountedVolumeName, 'DELETE')
