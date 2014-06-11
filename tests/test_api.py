@@ -10,6 +10,13 @@ class TestAPI(unittest.TestCase):
         self.xmlns = 'xmlns="http://apprecovery.com/management/api/2010/05"'
         self.nonetag = self.xml + '<None ' + self.xmlns
 
+    def test_supports_context_manager(self):
+        try:
+            with api.AppAssureAPI(None) as a:
+                pass
+        except AttributeError:
+            self.fail()
+
     def test_none_is_none(self):
         self.assertEqual(self.api.getXML(''), self.nonetag + '></None>')
 

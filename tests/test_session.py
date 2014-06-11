@@ -10,3 +10,11 @@ class TestSession(unittest.TestCase):
 
     def setUp(self):
         pass
+
+    def test_supports_context_manager(self):
+        try:
+            with AppAssureSession(None, None, None, None) as a:
+                pass
+        except AttributeError:
+            self.fail()
+
