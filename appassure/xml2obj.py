@@ -13,6 +13,9 @@ def xml2obj(src):
     object.
     """
 
+    if src is None or src == '':
+        return ''
+
     non_id_char = re.compile('[^_0-9a-zA-Z]')
 
     def _name_mangle(name):
