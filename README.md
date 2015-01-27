@@ -7,8 +7,7 @@ python-appassure
 [travis]: https://travis-ci.org/rshipp/python-appassure
 [coveralls]: https://coveralls.io/r/rshipp/python-appassure?branch=development
 
-A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [REST
-API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
+A Python wrapper for the [AppAssure 5](http://www.appassure.com/) REST API.
 
 ## AppAssure
 
@@ -19,7 +18,7 @@ API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 > *  Restore your entire server and retrieve all of your data in seconds
 > *  Protect your workloads on VMs, physical servers and in the cloud
 > *  Restore to dissimilar systems, physical or virtual
-> *  Recover Microsoft� Exchange, SQL Server� and SharePoint� applications
+> *  Recover Microsoft(tm) Exchange, SQL Server(tm) and SharePoint(tm) applications
 > *  Ensure built-in disaster recovery with hot standby VMs
 
  -- *[Dell.com](http://software.dell.com/products/appassure/)*
