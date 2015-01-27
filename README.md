@@ -1,11 +1,11 @@
 python-appassure
 ================
 
-[![Build Status](https://travis-ci.org/george2/python-appassure.svg?branch=development)][travis]
-[![Coverage Status](https://coveralls.io/repos/george2/python-appassure/badge.png?branch=development)][coveralls]
+[![Build Status](https://travis-ci.org/rshipp/python-appassure.svg?branch=development)][travis]
+[![Coverage Status](https://coveralls.io/repos/rshipp/python-appassure/badge.png?branch=development)][coveralls]
 
-[travis]: https://travis-ci.org/george2/python-appassure
-[coveralls]: https://coveralls.io/r/george2/python-appassure?branch=development
+[travis]: https://travis-ci.org/rshipp/python-appassure
+[coveralls]: https://coveralls.io/r/rshipp/python-appassure?branch=development
 
 A Python wrapper for the [AppAssure 5](http://www.appassure.com/) [REST
 API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
@@ -38,7 +38,7 @@ API](http://docs.appassure.com/display/AA50D/AppAssure+5+API+Reference).
 
 ## Installation
 
-    git clone https://github.com/george2/python-appassure.git
+    git clone https://github.com/rshipp/python-appassure.git
     cd python-appassure
     python setup.py install
 

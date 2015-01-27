@@ -24,9 +24,9 @@ setup(
     license='BSD New',
     description='A Python wrapper for the AppAssure 5 REST API.',
     long_description=README,
-    url='https://github.com/george2/python-appassure',
-    author='george2',
-    author_email='rpubaddr0@gmail.com',
+    url='https://github.com/rshipp/python-appassure',
+    author='Ryan Shipp',
+    author_email='python@rshipp.com',
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
