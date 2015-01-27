@@ -7,7 +7,7 @@ python-appassure
 [travis]: https://travis-ci.org/rshipp/python-appassure
 [coveralls]: https://coveralls.io/r/rshipp/python-appassure?branch=development
 
-A Python wrapper for the [AppAssure 5](http://www.appassure.com/) REST API.
+A Python wrapper for the [AppAssure 5](http://www.appassure.com/) API.
 
 ## AppAssure
 
