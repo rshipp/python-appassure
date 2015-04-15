@@ -166,6 +166,15 @@ time.formatTime(datetime.datetime.utcnow())
 
 ## Contributing
 
+**NOTE**: Dell changed the AppAssure documentation, so the script doesn't
+work anymore. You can still access the docs and build the interfaces
+manually:
+
+* Core: http://documents.software.dell.com/DOC308890
+* Agent: http://documents.software.dell.com/DOC308944
+
+### Old info
+
 AppAssure has quite a few of what it calls
 [interfaces](http://docs.appassure.com/display/AA50D/Core+API+Reference)
 available, all of which have been implemented (but not fully tested) at
